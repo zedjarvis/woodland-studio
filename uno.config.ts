@@ -1,15 +1,16 @@
+// uno.config.ts
 import { defineConfig, presetIcons, presetTypography, presetUno } from 'unocss'
 
 export default defineConfig({
-  shortcuts: [
-    {
-      'footer-text': 'font-normal text-15px',
-      'footer-link': 'hover:underline'
-    }
-  ],
+  // ...UnoCSS options
   presets: [
     presetUno(),
-    presetIcons(),
     presetTypography(),
+    presetIcons({
+      extraProperties: {
+        'display': 'inline-block',
+        'vertical-align': 'middle',
+      },
+    })
   ]
 })
